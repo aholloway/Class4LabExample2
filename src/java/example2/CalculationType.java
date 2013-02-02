@@ -1,5 +1,5 @@
 
-package example1;
+package example2;
 
 /**
  *

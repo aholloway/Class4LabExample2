@@ -16,24 +16,39 @@
             -->
         </style>
         <script>
-            function validateForm()
-            {
-            var x=document.forms["RectangleCalculatorForm"]["x"].value;
-            var y=document.forms["RectangleCalculatorForm"]["y"].value;
-            if (x==null || x=="")
-              {
-              alert("x must be filled out");
-              return false;
-              }
-            if (y==null || y=="")
-              {
-              alert("y must be filled out");
-              return false;
-              }
-            }
-            function isNumber(n) {
-                return !isNaN(parseFloat(n)) && isFinite(n);
-            }
+            function validateRectangleInputs(){
+                var x=document.forms["RectangleCalculatorForm"]["x"].value;
+                var y=document.forms["RectangleCalculatorForm"]["y"].value;
+                if (x==null || x==""){
+                    alert("x must be filled out");
+                    return false;
+                }
+                if (y==null || y==""){
+                    alert("y must be filled out");
+                    return false;
+                }
+                if (!isNumber(x)){
+                    alert("x must be numeric")
+                    return false;
+                }  
+                if (!isNumber(y)){
+                    alert("y must be numeric")
+                    return false;
+                }
+                function validateCircleInput(){
+                    var r=document.forms["CircleCalculatorForm"]["r"].value;
+                    if (r==null || r==""){
+                        alert("r must be filled out");
+                        return false;
+                    }
+                    if (!isNumber(r)){
+                        alert("r must be numeric")
+                        return false;
+                    }  
+                }
+                function isNumber(n) {
+                    return !isNaN(parseFloat(n)) && isFinite(n);
+                }
         </script>
     </head>
     <body>
@@ -42,38 +57,40 @@
         <hr>
         </br>
         <img border="0" src="images/rectangle.jpg" alt="Rectangle" width="304" height="228">
-        
+
         <p>Enter x and y to get the area of a rectangle!</p>
-        
+
         <form name="RectangleCalculatorForm" action="RectangleAreaCalculatorServlet" 
-              onsubmit="return validateForm()" method="POST">
+              onsubmit="return validateRectangleInputs()" method="POST">
             <p class="tab">x: <input type="text" name="x" size="10"></p>
             <p class="tab">y: <input type="text" name="y" size="10"></p>
             <br />
             <br />
             <input type="submit" value="Submit">
         </form>
-        
+
         </br>
         <hr>
         <img border="0" src="images/circle.jpg" alt="Circle" width="228" height="228">
-        
+
         <p>Enter r to get the area of a circle!</p>
-        
-        <form action="CircleAreaCalculatorServlet" method="POST">
+
+        <form name="CircleCalculatorForm" action="CircleAreaCalculatorServlet" 
+              onsubmit="return validateCircleInput()" method="POST">
             <p class="tab">r: <input type="text" name="r" size="5"></p>
             <br />
             <br />
             <input type="submit" value="Submit">
         </form>
-        
+
         </br>
         <hr>
         <img border="0" src="images/Rt Triangle.PNG" alt="Rt Triangle" width="304" height="228">
-        
+
         <p>Enter 2 of the below to get the value of the third side!</p>
-        
-        <form action="RtAngleSideCalculatorServlet" method="POST">
+
+        <form name="RtAngleCalculatorForm" action="RtAngleSideCalculatorServlet" 
+              onsubmit="return validateRtAngleInput()" method="POST">
             <p class="tab">a: <input type="text" name="a" size="5"></p>
             <p class="tab">b: <input type="text" name="b" size="5"></p>
             <p class="tab">c: <input type="text" name="c" size="5"></p>
@@ -81,7 +98,7 @@
             <br />
             <input type="submit" value="Submit">
         </form>
-        
+
         <br />
         <br />
         <br />

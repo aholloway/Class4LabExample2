@@ -3,7 +3,7 @@
  * @created 2/2/13
  * @version 1.01 
  */
-package example1;
+package example2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Drew
  */
-@WebServlet(name = "CircleAreaCalculatorServlet", urlPatterns = {"/CircleAreaCalculatorServlet"})
-public class CircleAreaCalculatorServlet extends HttpServlet {
+@WebServlet(name = "RectangleAreaCalculatorServlet", urlPatterns = {"/RectangleAreaCalculatorServlet"})
+public class RectangleAreaCalculatorServlet extends HttpServlet {
     private static final String destination = "/answerPage.jsp";
 
     /**
@@ -39,13 +39,15 @@ public class CircleAreaCalculatorServlet extends HttpServlet {
         
         try {
             
-            request.setAttribute("calculationType",CalculationType.CIRCLE_AREA);
-         
-            String r = request.getParameter("r");
+            request.setAttribute("calculationType",CalculationType.RECTANGLE_AREA);
             
-            double area = 3.14159265359*Math.pow(Double.parseDouble(r),2);
+            String x = request.getParameter("x");
+            
+            String y = request.getParameter("y");
+            
+            double area = Double.parseDouble(x)*Double.parseDouble(y);
                   
-            request.setAttribute("circleArea", area);
+            request.setAttribute("rectangleArea", area);
               
             RequestDispatcher dispatcher =
                         getServletContext().getRequestDispatcher(destination);

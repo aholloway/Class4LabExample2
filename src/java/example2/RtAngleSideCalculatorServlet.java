@@ -3,7 +3,7 @@
  * @created 2/2/13
  * @version 1.01 
  */
-package example1;
+package example2;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -4,7 +4,7 @@
     Author     : aholloway
 --%>
 
-<%@page import="example1.CalculationType"%>
+<%@page import="example2.CalculationType"%>
 <%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -84,6 +84,6 @@
             }
         %>
 
-        <p><a href="homeEx1.jsp">Return to Example 1 Home</a></p>
+        <p><a href="home.jsp">Return to Home</a></p>
     </body>
 </html>
