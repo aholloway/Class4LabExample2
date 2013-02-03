@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CircleAreaCalculatorServlet", urlPatterns = {"/CircleAreaCalculatorServlet"})
 public class CircleAreaCalculatorServlet extends HttpServlet {
-    private static final String destination = "/answerPage.jsp";
+    private static final String destination = "/home.jsp";
 
     /**
      * Processes requests for both HTTP

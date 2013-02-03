@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "RtAngleSideCalculatorServlet", urlPatterns = {"/RtAngleSideCalculatorServlet"})
 public class RtAngleSideCalculatorServlet extends HttpServlet {
-    private static final String destination = "/answerPage.jsp";
+    private static final String destination = "/home.jsp";
 
     /**
      * Processes requests for both HTTP
