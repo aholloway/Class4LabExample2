@@ -49,6 +49,7 @@
                 
                 //one and only one can be null or empty
                 var valueCount=0;
+                
                 if (!isANull){
                     valueCount++
                     if(!isNumeric(a,"a")){
@@ -66,21 +67,23 @@
                     if(!isNumeric(c,"c")){
                         validInputs=false;
                     }
-                    //hypoteneuse cannot exceed length of either other side
-                    if (!isANull && c<a){
-                        alert("c cannot be less than a")
-                        validInputs=false;
-                    }
-                    if (!isBNull && c<b){
-                        alert("c cannot be less than b")
-                        validInputs=false;
-                    }
                 }
+                
                 if (valueCount!=2){
                     alert("One and only one of these fields must be empty")
                     validInputs=false;
                 }
                 
+                //hypoteneuse cannot exceed length of either other side
+                if (valueCount==2 && !isCNull && !isANull && c<a){
+                    alert("c cannot be less than a")
+                    validInputs=false;
+                }
+                
+                if (valueCount==2 && !isCNull && !isBNull && c<b){
+                    alert("c cannot be less than b")
+                    validInputs=false;
+                }
                 
                 return validInputs;
                 
@@ -185,9 +188,9 @@
         </form>
 
         <br />
-        
+
         <hr>
-        
+
         <img border="0" src="images/Rt Triangle.PNG" alt="Rt Triangle" width="304" height="228">
 
         <p>Enter 2 of the below to get the value of the third side!</p>

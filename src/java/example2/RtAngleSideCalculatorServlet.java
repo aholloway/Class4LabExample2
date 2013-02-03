@@ -54,69 +54,12 @@ public class RtAngleSideCalculatorServlet extends HttpServlet {
             
             request.setAttribute("missingSideName", emptySide);
             
-            
-            
-            request.setAttribute("sideLength", 
-                    TriangleCalculator.calculateEmptySideLength
-                    (emptySide, strA, strB, strC));
-            /*
-            String emptyParam = "";
-            double a = 0.0;
-            double b = 0.0;
-            double c = 0.0;
-
-            // need to determine which parameters are not null
-            if (strA.isEmpty()) {
-                emptyParam = "a";
-            }
-
-            if (strB.isEmpty()) {
-                emptyParam = "b";
-            }
-
-            if (strC.isEmpty()) {
-                emptyParam = "c";
-            }
-
-
-
-            // if exactly two are null, we need to know which parmaeter is 
-            // null and solve for it.  In this situation, we are going to 
-            // assume that the first null parameter is the only null parameter.
-            double sideLength = 0.0;
-
-            switch (emptyParam) {
-                // solve for a
-                // a = sq rt ( c^2 - b^2 )
-                case "a":
-                    b = Double.valueOf(strB);
-                    c = Double.valueOf(strC);
-                    sideLength = Math.sqrt(Math.pow(c, 2) - Math.pow(b, 2));
-                    request.setAttribute("missingSideName", "a");
-                    break;
-                // solve for b
-                // b = sq rt ( c^2 - a^2 )
-                case "b":
-                    a = Double.valueOf(strA);
-                    c = Double.valueOf(strC);
-                    sideLength = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
-                    request.setAttribute("missingSideName", "b");
-                    break;
-                // solve for c
-                // c = sq rt ( a^2 + b^2 )
-                case "c":
-                    a = Double.valueOf(strA);
-                    b = Double.valueOf(strB);
-                    sideLength = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
-                    request.setAttribute("missingSideName", "c");
-                    break;
-
-
-            }
+            //detrming length of the missing side
+            double sideLength = TriangleCalculator.calculateEmptySideLength
+                    (emptySide, strA, strB, strC);
             
             request.setAttribute("sideLength", sideLength);
-            */
-
+            
             forward(request, response);
 
 

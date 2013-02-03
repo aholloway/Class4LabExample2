@@ -8,7 +8,7 @@ public class TriangleCalculator {
 
     public static String findEmptySide(String strA, String strB, String strC) {
         String emptyParam = "";
-        // need to determine which parameters are not null
+        // need to determine which parameters are not empty
         if (strA.isEmpty()) {
             emptyParam = "a";
         }
@@ -31,6 +31,7 @@ public class TriangleCalculator {
         double c = 0.0;
         double sideLength = 0.0;
 
+        //can't do switch on strings for some reason.
         char charEmptySideName = strEmptySideName.charAt(0);
 
         switch (charEmptySideName) {
