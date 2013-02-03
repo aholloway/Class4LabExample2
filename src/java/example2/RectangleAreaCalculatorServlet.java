@@ -45,7 +45,8 @@ public class RectangleAreaCalculatorServlet extends HttpServlet {
             
             String y = request.getParameter("y");
             
-            double area = Double.parseDouble(x)*Double.parseDouble(y);
+            double area = AreaCalculator.calculateRectangleArea
+                    (Double.parseDouble(x),Double.parseDouble(y));
                   
             request.setAttribute("rectangleArea", area);
               

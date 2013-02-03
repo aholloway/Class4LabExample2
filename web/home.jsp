@@ -126,7 +126,7 @@
         </script>
     </head>
     <body>
-        <h1>Example 2 Home</h1>
+        <h1><a name="top">Example 2 Home</a></h1>
         <h2>Choose a form!</h2>
         <hr>
         <%
@@ -185,7 +185,9 @@
         </form>
 
         <br />
+        
         <hr>
+        
         <img border="0" src="images/Rt Triangle.PNG" alt="Rt Triangle" width="304" height="228">
 
         <p>Enter 2 of the below to get the value of the third side!</p>
@@ -222,6 +224,8 @@
             <input type="submit" value="Submit">
         </form>
 
+        <br />
+        <a href="#top">Back to the top.</a> 
         <br />
         <br />
         <br />

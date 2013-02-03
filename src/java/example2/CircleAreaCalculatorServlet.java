@@ -42,9 +42,10 @@ public class CircleAreaCalculatorServlet extends HttpServlet {
             request.setAttribute("calculationType",CalculationType.CIRCLE_AREA);
          
             String r = request.getParameter("r");
+             
+             double area = 
+                     AreaCalculator.calculateCircleArea(Double.parseDouble(r));
             
-            double area = 3.14159265359*Math.pow(Double.parseDouble(r),2);
-                  
             request.setAttribute("circleArea", area);
               
             RequestDispatcher dispatcher =
