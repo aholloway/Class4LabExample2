@@ -16,7 +16,7 @@
             .tab { margin-left: 40px; }
             -->
         </style>
-        <script>
+        <script type="text/javascript">
             function validateRectangleInputs(){
                 var validInputs=false;
                 var x=document.forms["RectangleCalculatorForm"]["x"].value;
